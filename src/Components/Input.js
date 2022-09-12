@@ -38,7 +38,7 @@ const Input = ({ data, handlePost , setMsg}) => {
 
   function handleClick() {
     if (text === "" || tag === "" || desc === "") {
-      setMsg("One or more field in empty 😖", false)
+      setMsg("One or more field is empty 😖", false)
     }
 
     else{
