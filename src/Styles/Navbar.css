@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.head {
+  background-color: #CDF0EA;
+  height: 50px;
+  border: 2px solid black;
+}
+
+.heading {
+  color: black;
+  text-align: center;
+  /* margin-top: 5px; */
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

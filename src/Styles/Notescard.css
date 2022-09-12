@@ -1,0 +1,35 @@
+.box {
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  align-items: space-between;
+  justify-content: flex-start;
+  font-family: sans-serif;
+  width: 300px;
+  height: 350px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  column-gap: 300px;
+  justify-content: flex-start;
+  margin-left: 10px;
+}
+
+.item1 {
+  margin-top: 20px;
+}
+
+.item2 {
+  margin-top: 35px;
+  word-wrap: break-word;
+  width: 260px;
+}
+
+.icons {
+  margin: 10px -0.3px;
+display: grid;
+grid-auto-rows: 30px;
+}
