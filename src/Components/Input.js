@@ -38,7 +38,7 @@ const Input = ({ data, handlePost , setMsg}) => {
 
   function handleClick() {
     if (text === "" || tag === "" || desc === "") {
-      setMsg("One or more field in empty")
+      setMsg("One or more field in empty 😖", false)
     }
 
     else{
@@ -55,6 +55,7 @@ const Input = ({ data, handlePost , setMsg}) => {
     settag("");
     setdesc("");
     setfield(!field);
+    setMsg("Notes added successfully 😎", true)
   }
   }
 

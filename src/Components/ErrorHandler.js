@@ -3,9 +3,11 @@ import "../Styles/ErrorHandler.css"
 
 
 
-const ErrorHandler = ({errorMsg}) => {
+const ErrorHandler = ({ errorMsg, color }) => {
     return (
-        <div className='error-head'>
+        <div className='error-head' style={{
+            backgroundColor: color ? "#90ee90" : "rgb(239, 176, 176)"
+        }}>
             <div className='error-body'>
                 <h4>{errorMsg}</h4>
             </div>

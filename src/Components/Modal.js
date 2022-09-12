@@ -17,12 +17,16 @@ function Modal({ setOpenModal, data, modalId, setMsg }) {
     let a = data[index];
 
     if (title === a.title && tagline === a.tagline && notes === a.description) {
-      setMsg("You haven't updated anything...")
+      setMsg("You haven't updated anything 🤕", false)
+      setOpenModal(false);
     }
+    else{
     a.title = title;
     a.tagline = tagline;
     a.description = notes;
     setOpenModal(false);
+    setMsg("Update Successful 🥳", true)
+  }
   }
 
   useEffect(() => {

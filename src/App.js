@@ -33,6 +33,7 @@ function App() {
   const [modalId, setmodalId] = useState("");
   const [showError, setshowError] = useState(false);
   const [errorMsg, seterrorMsg] = useState("test");
+  const [color, setcolor] = useState(false)
 
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data));
@@ -46,6 +47,7 @@ function App() {
   function handleDelete(id) {
     let newData = data.filter((item) => item.id !== id);
     setData(newData);
+    setMsg("Notes deleted succesfully 😶‍🌫️", true)
   }
 
   function handlePost(value) {
@@ -64,6 +66,7 @@ function App() {
 
     setData(arr1);
     seticonId((iconId) => [...iconId, id]);
+    setMsg("Notes Pinned Succesfully 🤟", true)
   }
 
   function handleclose(id, item) {
@@ -77,6 +80,7 @@ function App() {
     });
     arr.push(item);
     setData(arr);
+    setMsg("Notes Unpinned Succesfully 🤟", true)
   }
 
   function handleId(id) {
@@ -84,9 +88,10 @@ function App() {
     setOpenModal(true);
   }
 
-  function setMsg(msg) {
+  function setMsg(msg, bol) {
     seterrorMsg(msg);
     setshowError(true);
+    setcolor(bol)
     setTimeout(() => {
       setshowError(false);
     }, 3000);
@@ -95,9 +100,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {showError && <ErrorHandler errorMsg={errorMsg} />}
+        {showError && <ErrorHandler errorMsg={errorMsg} color={color}/>}
         {openmodal ? (
-          <Modal setOpenModal={setOpenModal} data={data} modalId={modalId} setMsg={setMsg}/>
+          <Modal setOpenModal={setOpenModal} data={data} modalId={modalId} setMsg={setMsg} />
         ) : (
           <Navbar />
         )}
