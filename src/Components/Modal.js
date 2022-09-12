@@ -2,19 +2,23 @@ import React, { useState, useEffect } from "react";
 
 import "../Styles/Modal.css";
 
-function Modal({ setOpenModal, data, modalId }) {
+function Modal({ setOpenModal, data, modalId, setMsg }) {
   var index = data
     .map(function (e) {
       return e.id;
     })
     .indexOf(modalId);
 
-  const [title, settitle] = useState("a");
+  const [title, settitle] = useState("");
   const [tagline, settagline] = useState("");
   const [notes, setnotes] = useState("");
 
   function handleUpdate() {
     let a = data[index];
+
+    if (title === a.title && tagline === a.tagline && notes === a.description) {
+      setMsg("You haven't updated anything...")
+    }
     a.title = title;
     a.tagline = tagline;
     a.description = notes;

@@ -7,8 +7,6 @@ import {
   FaTimesCircle,
 } from "react-icons/fa";
 
-
-
 const Notescard = ({
   item,
   handleDelete,

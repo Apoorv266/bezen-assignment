@@ -97,7 +97,7 @@ function App() {
       <header className="App-header">
         {showError && <ErrorHandler errorMsg={errorMsg} />}
         {openmodal ? (
-          <Modal setOpenModal={setOpenModal} data={data} modalId={modalId} />
+          <Modal setOpenModal={setOpenModal} data={data} modalId={modalId} setMsg={setMsg}/>
         ) : (
           <Navbar />
         )}
